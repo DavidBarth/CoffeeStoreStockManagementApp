@@ -3,3 +3,8 @@ C:\DAVE\__PLURALSIGHT\PracticalMVVM\2-practical-mvvm-m2-exercise-files\Demo 1\St
 C:\DAVE\__PLURALSIGHT\PracticalMVVM\2-practical-mvvm-m2-exercise-files\Demo 1\Start\JoeCoffeeStore.StockManagement.App\JoeCoffeeStore.StockManagement.Model\obj\Debug\JoeCoffeeStore.StockManagement.Model.csprojResolveAssemblyReference.cache
 C:\DAVE\__PLURALSIGHT\PracticalMVVM\2-practical-mvvm-m2-exercise-files\Demo 1\Start\JoeCoffeeStore.StockManagement.App\JoeCoffeeStore.StockManagement.Model\obj\Debug\JoeCoffeeStore.StockManagement.Model.dll
 C:\DAVE\__PLURALSIGHT\PracticalMVVM\2-practical-mvvm-m2-exercise-files\Demo 1\Start\JoeCoffeeStore.StockManagement.App\JoeCoffeeStore.StockManagement.Model\obj\Debug\JoeCoffeeStore.StockManagement.Model.pdb
+C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.Model\bin\Debug\JoeCoffeeStore.StockManagement.Model.dll
+C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.Model\bin\Debug\JoeCoffeeStore.StockManagement.Model.pdb
+C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.Model\obj\Debug\JoeCoffeeStore.StockManagement.Model.csprojResolveAssemblyReference.cache
+C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.Model\obj\Debug\JoeCoffeeStore.StockManagement.Model.dll
+C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.Model\obj\Debug\JoeCoffeeStore.StockManagement.Model.pdb

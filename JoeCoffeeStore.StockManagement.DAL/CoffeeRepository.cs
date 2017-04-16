@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace JoeCoffeeStore.StockManagement.DAL
 {
+    //normally the repositiory retrieves data from a DB or a webservice
     public class CoffeeRepository : ICoffeeRepository
     {
         private static List<Coffee> coffees;

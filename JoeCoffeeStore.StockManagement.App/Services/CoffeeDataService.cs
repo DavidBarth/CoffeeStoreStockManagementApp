@@ -1,19 +1,16 @@
 ﻿using JoeCoffeeStore.StockManagement.DAL;
 using JoeCoffeeStore.StockManagement.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JoeCoffeeStore.StockManagement.App.Services
 {
+    //business layer of service layer towards CoffeeRepository class 
     public class CoffeeDataService: ICoffeeDataService
     {
         ICoffeeRepository repository = new CoffeeRepository();
         public CoffeeDataService()
         {
-            this.repository = repository;
+            
         }
 
         public Coffee GetCoffeeDetail(int coffeeId)
