@@ -3,17 +3,9 @@ using JoeCoffeeStore.StockManagement.Model;
 using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace JoeCoffeeStore.StockManagement.App.View
 {
@@ -23,6 +15,9 @@ namespace JoeCoffeeStore.StockManagement.App.View
     public partial class CoffeeOverviewView : MetroWindow
     {
         private Coffee selectedCoffee;
+
+        private List<Coffee> coffeesList;
+
         public CoffeeOverviewView()
         {
             InitializeComponent();
@@ -33,7 +28,11 @@ namespace JoeCoffeeStore.StockManagement.App.View
         private void LoadData()
         {
             CoffeeDataService coffeeDataService = new CoffeeDataService();
-            CoffeeListView.ItemsSource = coffeeDataService.GetAllCoffees();
+
+            //calling on dataservice to get all coffees
+            coffeesList = coffeeDataService.GetAllCoffees();
+            //setting list's itemsource
+            CoffeeListView.ItemsSource = coffeesList;
         }
 
         private void EditCoffeeButton_Click(object sender, RoutedEventArgs e)

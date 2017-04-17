@@ -23,8 +23,6 @@ C:\DAVE\__PLURALSIGHT\PracticalMVVM\2-practical-mvvm-m2-exercise-files\Demo 1\St
 C:\DAVE\__PLURALSIGHT\PracticalMVVM\2-practical-mvvm-m2-exercise-files\Demo 1\Start\JoeCoffeeStore.StockManagement.App\JoeCoffeeStore.StockManagement.App\obj\Debug\JoeCoffeeStore.StockManagement.App.exe
 C:\DAVE\__PLURALSIGHT\PracticalMVVM\2-practical-mvvm-m2-exercise-files\Demo 1\Start\JoeCoffeeStore.StockManagement.App\JoeCoffeeStore.StockManagement.App\obj\Debug\JoeCoffeeStore.StockManagement.App.pdb
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\bin\Debug\JoeCoffeeStore.StockManagement.App.exe.config
-C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\obj\Debug\JoeCoffeeStore.StockManagement.App.exe
-C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\obj\Debug\JoeCoffeeStore.StockManagement.App.pdb
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\bin\Debug\JoeCoffeeStore.StockManagement.App.exe
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\bin\Debug\JoeCoffeeStore.StockManagement.App.pdb
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\bin\Debug\JoeCoffeeStore.StockManagement.DAL.dll
@@ -33,6 +31,7 @@ C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\bin\Deb
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\bin\Debug\System.Windows.Interactivity.dll
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\bin\Debug\JoeCoffeeStore.StockManagement.DAL.pdb
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\bin\Debug\JoeCoffeeStore.StockManagement.Model.pdb
+C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\bin\Debug\MahApps.Metro.pdb
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\bin\Debug\MahApps.Metro.xml
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\obj\Debug\JoeCoffeeStore.StockManagement.App.csprojResolveAssemblyReference.cache
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\obj\Debug\View\CoffeeDetailView.baml
@@ -46,4 +45,5 @@ C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\obj\Deb
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\obj\Debug\JoeCoffeeStore.StockManagement.App.g.resources
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\obj\Debug\JoeCoffeeStore.StockManagement.App.Properties.Resources.resources
 C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\obj\Debug\JoeCoffeeStore.StockManagement.App.csproj.GenerateResource.Cache
-C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\bin\Debug\MahApps.Metro.pdb
+C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\obj\Debug\JoeCoffeeStore.StockManagement.App.exe
+C:\DAVE\CoffeeStoreStockManagementApp\JoeCoffeeStore.StockManagement.App\obj\Debug\JoeCoffeeStore.StockManagement.App.pdb
