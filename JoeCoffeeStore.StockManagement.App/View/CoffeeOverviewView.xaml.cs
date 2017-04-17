@@ -31,7 +31,7 @@ namespace JoeCoffeeStore.StockManagement.App.View
 
             //calling on dataservice to get all coffees
             coffeesList = coffeeDataService.GetAllCoffees();
-            //setting list's itemsource
+            //setting list's itemsource to coffeeList
             CoffeeListView.ItemsSource = coffeesList;
         }
 

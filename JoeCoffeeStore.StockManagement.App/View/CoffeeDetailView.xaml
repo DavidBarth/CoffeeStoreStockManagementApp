@@ -27,7 +27,7 @@
                 <RowDefinition Height="30"></RowDefinition>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Name="CoffeeNameLabel" 
-                   Content="{Binding CoffeeName}"
+                   Content="{Binding CoffeeName,Mode=OneWay}"
                    Grid.ColumnSpan="2" FontSize="40" FontWeight="Bold"></Label>
 
             <Image Name="CoffeeImage" Grid.Row="1"
@@ -38,7 +38,7 @@
             <Label Grid.Row="5" Content="Stock amount" FontWeight="Bold"></Label>
             <Label Grid.Row="6" Content="First time added" FontWeight="Bold"></Label>
 
-            <TextBox Grid.Row="2" Grid.Column="1" Name="CoffeeIdTextBox" Text="{Binding CoffeeId}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="CoffeeIdTextBox" Text="{Binding CoffeeId, Mode=OneWay}"></TextBox>
             <TextBox Grid.Row="3" Grid.Column="1" Name="CoffeeDescriptionTextBox" Text="{Binding Description}" AcceptsReturn="True" Height="75"></TextBox>
             <TextBox Grid.Row="4" Grid.Column="1" Name="CoffeePriceTextBox" Text="{Binding Price}"></TextBox>
             <TextBox Grid.Row="5" Grid.Column="1" Name="StockAmountTextBox" Text="{Binding AmountInStock}"></TextBox>
@@ -46,6 +46,7 @@
             <TextBox Grid.Row="7" Grid.Column="1" Name="ExtraDescriptionTextBox" Text="{Binding ExtraDescription}"></TextBox>
 
             <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="2">
+                <Button Name="ChangeCoffeButton" Click="ChangeCoffeeButton_Click" Margin="5" Content="Change coffee"></Button>
                 <Button Name="SaveCoffeeButton" Click="SaveCoffeeButton_Click" Margin="5" Content="Save coffee"></Button>
                 <Button  Name="DeleteCoffeeButton" Click="DeleteCoffeeButton_Click"  Margin="5" Content="Delete coffee"></Button>
             </StackPanel>
