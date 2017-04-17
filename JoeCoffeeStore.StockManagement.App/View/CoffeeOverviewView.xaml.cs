@@ -1,8 +1,9 @@
-﻿using JoeCoffeeStore.StockManagement.App.Services;
+﻿using JoeCoffeeStore.StockManagement.App.Extensions;
+using JoeCoffeeStore.StockManagement.App.Services;
 using JoeCoffeeStore.StockManagement.Model;
 using MahApps.Metro.Controls;
 using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -16,7 +17,8 @@ namespace JoeCoffeeStore.StockManagement.App.View
     {
         private Coffee selectedCoffee;
 
-        private List<Coffee> coffeesList;
+        //private List<Coffee> coffeesList;
+        private ObservableCollection<Coffee> coffeesList;
 
         public CoffeeOverviewView()
         {
@@ -30,7 +32,10 @@ namespace JoeCoffeeStore.StockManagement.App.View
             CoffeeDataService coffeeDataService = new CoffeeDataService();
 
             //calling on dataservice to get all coffees
-            coffeesList = coffeeDataService.GetAllCoffees();
+            //using the extension method in /Extensions that transforms the List into an ObservableCollection
+            //thus change becomes visible in UI list
+            coffeesList = coffeeDataService.GetAllCoffees().ToObservableCollection();
+
             //setting list's itemsource to coffeeList
             CoffeeListView.ItemsSource = coffeesList;
         }
@@ -65,7 +70,20 @@ namespace JoeCoffeeStore.StockManagement.App.View
 
         private void AddFakeCoffeeButton_Click(object sender, RoutedEventArgs e)
         {
+            Coffee fake = new Coffee()
+            {
+                CoffeeId = 123,
+                CoffeeName = "Fake",
+                Description = "Fake tasting fake coffee",
+                ImageId = 1,
+                AmountInStock = 1,
+                InStock = true,
+                FirstAddedToStockDate = new DateTime(2014, 1, 3),
+                OriginCountry = Country.Ecuador,
+                Price = 100000
+            };
 
+            coffeesList.Add(fake);
         }
     }
 }
