@@ -26,7 +26,7 @@
                                 <RowDefinition Height="30"></RowDefinition>
                                 <RowDefinition Height="15"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Image Source="{Binding ImageId}" Grid.RowSpan="2" VerticalAlignment="Center"></Image>
+                            <Image Source="{Binding ImageId, Converter={StaticResource localImageConverter}}" Grid.RowSpan="2" VerticalAlignment="Center"></Image>
                             <Label Content="{Binding CoffeeName}" FontSize="14" Grid.Column="1"  Grid.ColumnSpan="2" FontWeight="Bold"></Label>
                             <StackPanel  Grid.Row="1" Orientation="Horizontal" Grid.Column="1">
                                 <Label Content="Stock: "></Label>
