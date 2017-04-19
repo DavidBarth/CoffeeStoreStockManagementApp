@@ -12,6 +12,7 @@ namespace JoeCoffeeStore.StockManagement.App.Converter
 {
     public class ImageConverter : IValueConverter
     {
+        //based on the value which is the image id the converter returns a bitmap image
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
 

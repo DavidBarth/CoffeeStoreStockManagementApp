@@ -15,7 +15,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="#CCCCCC" BorderThickness="1">
-                        <Grid >
+                        <Grid Background="{Binding AmountInStock, Converter={StaticResource localAmountInStockConverter}}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
