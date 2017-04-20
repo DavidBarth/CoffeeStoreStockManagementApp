@@ -1,4 +1,6 @@
-﻿using JoeCoffeeStore.StockManagement.Model;
+﻿using JoeCoffeeStore.StockManagement.App.Extensions;
+using JoeCoffeeStore.StockManagement.App.Services;
+using JoeCoffeeStore.StockManagement.Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -9,6 +11,20 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         private ObservableCollection<Coffee> coffees;
+
+        private CoffeeDataService coffeeDataService;
+
+        private Coffee selectedCoffee;
+
+        public Coffee SelectedCoffee
+        {
+            get { return selectedCoffee; }
+
+            set {
+                selectedCoffee = value;
+                RaisePropertyChanged("SelectedCoffee");
+            }
+        }
 
         //method will call PropertyChanged event if someone is listening
         public void RaisePropertyChanged(string propertyThatChanged)
@@ -27,6 +43,17 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
                 coffees = value;
                 RaisePropertyChanged("Coffees");
             }
+        }
+
+        
+        public CoffeeOverviewViewModel()
+        {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            Coffees = coffeeDataService.GetAllCoffees().ToObservableCollection(); 
         }
     }
 }
