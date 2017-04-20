@@ -4,7 +4,11 @@
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       Title="Joe's Coffee Store stock management" 
                       Height="480" 
-                      Width="640">
+                      Width="640"
+                      xmlns:viewModel="clr-namespace:JoeCoffeeStore.StockManagement.App.ViewModel">
+    <Controls:MetroWindow.DataContext>
+        <viewModel:CoffeeOverviewViewModel></viewModel:CoffeeOverviewViewModel>
+    </Controls:MetroWindow.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -55,7 +59,7 @@
                 <ColumnDefinition Width="150"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Image Name="CoffeeImage" Grid.Row="0"
+            <Image Name="CoffeeImage" Source="{Binding SelectedCoffee.ImageId, Converter={StaticResource localImageConverter}, Mode=OneWay}" Grid.Row="0"
                    Grid.ColumnSpan="2" MaxHeight="150" MaxWidth="150"></Image>
             <Label Grid.Row="1" Content="Id" FontWeight="Bold"></Label>
             <Label Grid.Row="2" Content="Coffee name" FontWeight="Bold"></Label>

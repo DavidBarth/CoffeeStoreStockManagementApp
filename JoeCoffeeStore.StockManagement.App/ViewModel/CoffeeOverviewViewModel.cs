@@ -20,7 +20,8 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         {
             get { return selectedCoffee; }
 
-            set {
+            set
+            {
                 selectedCoffee = value;
                 RaisePropertyChanged("SelectedCoffee");
             }
@@ -31,7 +32,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         {
             //checking if event is not null than raise event and pass
             //in propperty name that has changed
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyThatChanged));   
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyThatChanged));
         }
 
         public ObservableCollection<Coffee> Coffees
@@ -45,15 +46,17 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
             }
         }
 
-        
+
         public CoffeeOverviewViewModel()
         {
+            //create data service to pull in the list of coffees
+            coffeeDataService = new CoffeeDataService();
             LoadData();
         }
 
         private void LoadData()
         {
-            Coffees = coffeeDataService.GetAllCoffees().ToObservableCollection(); 
+            Coffees = coffeeDataService.GetAllCoffees().ToObservableCollection();
         }
     }
 }

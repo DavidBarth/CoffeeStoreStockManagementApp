@@ -39,17 +39,18 @@
             <Label Grid.Row="6" Content="First time added" FontWeight="Bold"></Label>
 
             <TextBox Grid.Row="2" Grid.Column="1" Name="CoffeeIdTextBox" Text="{Binding CoffeeId, Mode=OneWay}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" Name="CoffeeDescriptionTextBox" Text="{Binding Description}" AcceptsReturn="True" Height="75"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="1" Name="CoffeePriceTextBox" Text="{Binding Price}"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="1" Name="StockAmountTextBox" Text="{Binding AmountInStock}"></TextBox>
-            <TextBox Grid.Row="6" Grid.Column="1" Name="FirstTimeAddedTextBox" Text="{Binding FirstAddedToStockDate}"></TextBox>
-            <TextBox Grid.Row="7" Grid.Column="1" Name="ExtraDescriptionTextBox" Text="{Binding ExtraDescription}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" Name="CoffeeDescriptionTextBox" Text="{Binding Description, Mode=OneWay}" AcceptsReturn="True" Height="75"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="1" Name="CoffeePriceTextBox" Text="{Binding Price, Mode=OneWay}"></TextBox>
+            <TextBox Grid.Row="5" Grid.Column="1" Name="StockAmountTextBox" Text="{Binding AmountInStock, Mode=OneWay}"></TextBox>
+            <TextBox Grid.Row="6" Grid.Column="1" Name="FirstTimeAddedTextBox" Text="{Binding FirstAddedToStockDate, Mode=OneWay}"></TextBox>
+            <TextBox Grid.Row="7" Grid.Column="1" Name="ExtraDescriptionTextBox" Text="{Binding ExtraDescriptio, Mode=OneWay}"></TextBox>
 
-            <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="2">
+           <!-- <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="2">
                 <Button Name="ChangeCoffeButton" Click="ChangeCoffeeButton_Click" Margin="5" Content="Change coffee"></Button>
                 <Button Name="SaveCoffeeButton" Click="SaveCoffeeButton_Click" Margin="5" Content="Save coffee"></Button>
                 <Button  Name="DeleteCoffeeButton" Click="DeleteCoffeeButton_Click"  Margin="5" Content="Delete coffee"></Button>
             </StackPanel>
+            -->
 
         </Grid>
     </ScrollViewer>
