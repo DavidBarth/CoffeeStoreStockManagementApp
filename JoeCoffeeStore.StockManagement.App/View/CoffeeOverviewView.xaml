@@ -5,10 +5,11 @@
                       Title="Joe's Coffee Store stock management" 
                       Height="480" 
                       Width="640"
-                      xmlns:viewModel="clr-namespace:JoeCoffeeStore.StockManagement.App.ViewModel">
-    <Controls:MetroWindow.DataContext>
-        <viewModel:CoffeeOverviewViewModel></viewModel:CoffeeOverviewViewModel>
-    </Controls:MetroWindow.DataContext>
+                      xmlns:viewModel="clr-namespace:JoeCoffeeStore.StockManagement.App.ViewModel"
+                      DataContext="{Binding Source={StaticResource mainViewModelLocator}, Path=CoffeeOverviewViewModel}"
+                      >
+    
+   
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>

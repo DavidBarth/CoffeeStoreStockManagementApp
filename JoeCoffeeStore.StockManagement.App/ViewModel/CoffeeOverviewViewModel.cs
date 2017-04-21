@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace JoeCoffeeStore.StockManagement.App.ViewModel
 {
-    class CoffeeOverviewViewModel : INotifyPropertyChanged
+    public class CoffeeOverviewViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
