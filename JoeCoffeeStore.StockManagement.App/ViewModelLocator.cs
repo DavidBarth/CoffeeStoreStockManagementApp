@@ -8,9 +8,16 @@ namespace JoeCoffeeStore.StockManagement.App
     {
         private static CoffeeOverviewViewModel coffeeOverviewViewModel = new CoffeeOverviewViewModel();
 
+        private static CoffeeDetailviewViewModel coffeeDetailviewViewModel = new CoffeeDetailviewViewModel();
+         
         public static CoffeeOverviewViewModel CoffeeOverviewViewModel
         {
             get { return coffeeOverviewViewModel; }
+        }
+
+        public static CoffeeDetailviewViewModel CoffeDetailviewViewModel
+        {
+            get { return coffeeDetailviewViewModel; }
         }
     }
 

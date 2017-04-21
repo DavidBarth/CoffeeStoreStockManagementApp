@@ -69,6 +69,7 @@
     <Compile Include="Services\CoffeeDataService.cs" />
     <Compile Include="Services\IDataService.cs" />
     <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="ViewModel\CoffeeDetailviewViewModel.cs" />
     <Compile Include="ViewModel\CoffeeOverviewViewModel.cs" />
     <Compile Include="View\CoffeeDetailView.xaml.cs">
       <DependentUpon>CoffeeDetailView.xaml</DependentUpon>

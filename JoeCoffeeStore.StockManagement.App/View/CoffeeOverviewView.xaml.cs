@@ -11,6 +11,10 @@ namespace JoeCoffeeStore.StockManagement.App.View
         {
             InitializeComponent();    
         }
-            
+
+        private void EditCoffeeButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
     }
 }
