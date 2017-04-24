@@ -30,7 +30,7 @@ namespace JoeCoffeeStore.StockManagement.App.Utility
         public bool CanExecute(object parameter)
         {
             bool b = canExecute == null ? true : canExecute(parameter);
-            return b;
+            return b; 
         }
 
         public event EventHandler CanExecuteChanged
