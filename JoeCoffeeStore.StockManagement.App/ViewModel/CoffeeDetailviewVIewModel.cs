@@ -35,10 +35,17 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
             }
         }
 
-        public void LoadCommands()
+        public CoffeeDetailviewViewModel()
         {
             SaveCommand = new CustomCommand(SaveCoffee, CanSaveCoffee);
             DeleteCommand = new CustomCommand(DeleteCoffee, CanDeleteCoffee);
+
+            Messenger.Default.Register<Coffee>(this, OnCoffeeReceived);
+        }
+
+        private void OnCoffeeReceived(Coffee coffee)
+        {
+            SelectedCoffee = coffee;   
         }
 
         //command

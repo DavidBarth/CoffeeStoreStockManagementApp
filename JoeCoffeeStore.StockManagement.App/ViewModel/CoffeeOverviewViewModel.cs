@@ -66,7 +66,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
 
         private void EditCoffee(object obj)
         {
-            System.Windows.MessageBox.Show("This will open detail view");
+            Messenger.Default.Send(selectedCoffee);
         }
 
         
