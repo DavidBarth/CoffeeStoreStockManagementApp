@@ -9,7 +9,6 @@
                       DataContext="{Binding Source={StaticResource mainViewModelLocator}, Path=CoffeeOverviewViewModel}"
                       >
     
-   
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>

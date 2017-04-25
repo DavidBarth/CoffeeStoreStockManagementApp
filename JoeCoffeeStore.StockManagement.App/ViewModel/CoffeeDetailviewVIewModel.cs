@@ -14,9 +14,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         public ICommand SaveCommand;
         public ICommand DeleteCommand;
 
-        private Coffee selectedCoffee;
-
-        private CoffeeDataService dataService;
+        private CoffeeDataService coffeeDataService;
 
         private void RaisePropertyChanged(string propertyName)
         {
@@ -24,7 +22,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        
+        private Coffee selectedCoffee;
         public Coffee SelectedCoffee
         {
             get { return selectedCoffee; }
@@ -36,8 +34,10 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
             }
         }
 
-        public CoffeeDetailviewViewModel()
+        public CoffeeDetailviewViewModel() 
         {
+            coffeeDataService = new CoffeeDataService();
+
             SaveCommand = new CustomCommand(SaveCoffee, CanSaveCoffee);
             DeleteCommand = new CustomCommand(DeleteCoffee, CanDeleteCoffee);
 
@@ -53,7 +53,8 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         //command
         private void SaveCoffee(object coffee)
         {
-            Messenger.Default.Send(new UpdateListMessage());
+            coffeeDataService.UpdateCoffee(SelectedCoffee);
+            Messenger.Default.Send<UpdateListMessage>(new UpdateListMessage());
         }
 
         private bool CanSaveCoffee(object coffee)
@@ -66,7 +67,8 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         //command
         private void DeleteCoffee(object coffee)
         {
-            Messenger.Default.Send(new UpdateListMessage());
+            coffeeDataService.DeleteCoffee(SelectedCoffee);
+            Messenger.Default.Send<UpdateListMessage>(new UpdateListMessage());
         }
 
         private bool CanDeleteCoffee(object coffee)

@@ -1,12 +1,9 @@
-﻿using JoeCoffeeStore.StockManagement.Model;
-using System;
+﻿ using JoeCoffeeStore.StockManagement.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace JoeCoffeeStore.StockManagement.App.Services
 {
-    public interface ICoffeeDataService
+    public interface ICoffeDataService
     {
         void DeleteCoffee(Coffee coffee);
         List<Coffee> GetAllCoffees();

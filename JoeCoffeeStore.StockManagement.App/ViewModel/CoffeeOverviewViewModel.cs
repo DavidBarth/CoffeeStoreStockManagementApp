@@ -6,7 +6,6 @@ using JoeCoffeeStore.StockManagement.Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
-using System;
 
 namespace JoeCoffeeStore.StockManagement.App.ViewModel
 {
@@ -17,11 +16,11 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         private ObservableCollection<Coffee> coffees;
 
         private CoffeeDataService coffeeDataService;
-
-        private Coffee selectedCoffee;
+        private DialogService dialogueService;
 
         public ICommand EditCommand { get; set; }
 
+        private Coffee selectedCoffee;
         public Coffee SelectedCoffee
         {
             get { return selectedCoffee; }
@@ -57,6 +56,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         {
             //create data service to pull in the list of coffees
             coffeeDataService = new CoffeeDataService();
+            dialogueService = new DialogService();
             LoadData();
             LoadCommands();
             Messenger.Default.Register<UpdateListMessage>(this, OnUpDateListMessageReceived);
@@ -65,6 +65,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         private void OnUpDateListMessageReceived(UpdateListMessage obj)
         {
             LoadData();
+            dialogueService.CloseDialog();
         }
 
         private void LoadCommands()
@@ -74,7 +75,8 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
 
         private void EditCoffee(object obj)
         {
-            Messenger.Default.Send(selectedCoffee);
+            Messenger.Default.Send<Coffee>(selectedCoffee);
+            dialogueService.ShowDialog();
         }
 
         

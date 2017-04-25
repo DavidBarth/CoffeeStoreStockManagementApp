@@ -4,6 +4,8 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         Title="Joe's Coffee Store stock management" 
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:viewmodels="clr-namespace:JoeCoffeeStore.StockManagement.App.ViewModel"
+        DataContext="{Binding Source={StaticResource mainViewModelLocator}, Path=CoffeDetailviewViewModel}"
         Height="800" 
         Width="600">
     <ScrollViewer>
@@ -26,11 +28,7 @@
                 <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="30"></RowDefinition>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Name="CoffeeNameLabel" 
-                   Content="{Binding CoffeeName,Mode=OneWay}"
-                   Grid.ColumnSpan="2" FontSize="40" FontWeight="Bold"></Label>
-
-            <Image Name="CoffeeImage" Grid.Row="1"
+            <Image Source="{Binding SelectedCoffee.ImageId, Converter={StaticResource localImageConverter}, Mode=OneWay}" Grid.Row="1"
                    Grid.ColumnSpan="2" MaxHeight="150" MaxWidth="150"></Image>
             <Label Grid.Row="2" Content="Id" FontWeight="Bold"></Label>
             <Label Grid.Row="3" Content="Description" FontWeight="Bold" VerticalAlignment="Center"></Label>
@@ -38,15 +36,15 @@
             <Label Grid.Row="5" Content="Stock amount" FontWeight="Bold"></Label>
             <Label Grid.Row="6" Content="First time added" FontWeight="Bold"></Label>
 
-            <TextBox Grid.Row="2" Grid.Column="1" Name="CoffeeIdTextBox" Text="{Binding CoffeeId, Mode=OneWay}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" Name="CoffeeDescriptionTextBox" Text="{Binding Description, Mode=OneWay}" AcceptsReturn="True" Height="75"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="1" Name="CoffeePriceTextBox" Text="{Binding Price, Mode=OneWay}"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="1" Name="StockAmountTextBox" Text="{Binding AmountInStock, Mode=OneWay}"></TextBox>
-            <TextBox Grid.Row="6" Grid.Column="1" Name="FirstTimeAddedTextBox" Text="{Binding FirstAddedToStockDate, Mode=OneWay}"></TextBox>
-            <TextBox Grid.Row="7" Grid.Column="1" Name="ExtraDescriptionTextBox" Text="{Binding ExtraDescriptio, Mode=OneWay}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SelectedCoffee.CoffeeId, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SelectedCoffee.Description, Mode=TwoWay}" AcceptsReturn="True" Height="75"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SelectedCoffee.Price, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding SelectedCoffee.AmountInStock, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding SelectedCoffee.FirstAddedToStockDate, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding SelectedCoffee.ExtraDescription, Mode=TwoWay, FallbackValue='NA'}"></TextBox>
 
            <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="2">
-                <Button Content="Save Coffee">
+                <Button Margin="5" Content="Save Coffee">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding SaveCommand}"></i:InvokeCommandAction>

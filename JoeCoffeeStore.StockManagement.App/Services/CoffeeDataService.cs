@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace JoeCoffeeStore.StockManagement.App.Services
 {
     //business layer of service layer towards CoffeeRepository class 
-    public class CoffeeDataService: ICoffeeDataService
+    public class CoffeeDataService: ICoffeDataService
     {
         ICoffeeRepository repository = new CoffeeRepository();
         public CoffeeDataService()
