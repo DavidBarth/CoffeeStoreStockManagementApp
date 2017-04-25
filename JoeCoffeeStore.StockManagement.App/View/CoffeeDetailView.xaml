@@ -45,12 +45,23 @@
             <TextBox Grid.Row="6" Grid.Column="1" Name="FirstTimeAddedTextBox" Text="{Binding FirstAddedToStockDate, Mode=OneWay}"></TextBox>
             <TextBox Grid.Row="7" Grid.Column="1" Name="ExtraDescriptionTextBox" Text="{Binding ExtraDescriptio, Mode=OneWay}"></TextBox>
 
-           <!-- <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="2">
-                <Button Name="ChangeCoffeButton" Click="ChangeCoffeeButton_Click" Margin="5" Content="Change coffee"></Button>
-                <Button Name="SaveCoffeeButton" Click="SaveCoffeeButton_Click" Margin="5" Content="Save coffee"></Button>
-                <Button  Name="DeleteCoffeeButton" Click="DeleteCoffeeButton_Click"  Margin="5" Content="Delete coffee"></Button>
+           <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="2">
+                <Button Content="Save Coffee">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding SaveCommand}"></i:InvokeCommandAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <Button Margin="5" Content="Delete Coffee">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding DeleteCommand}"></i:InvokeCommandAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
             </StackPanel>
-            -->
+            
 
         </Grid>
     </ScrollViewer>

@@ -49,20 +49,6 @@ namespace JoeCoffeeStore.StockManagement.App.View
         //    CoffeeImage.Source = img;
         //}
 
-        private void DeleteCoffeeButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void SaveCoffeeButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void ChangeCoffeeButton_Click(object sender, RoutedEventArgs e)
-        {
-            SelectedCoffee.CoffeeName = "New coffee name";
-            SelectedCoffee.Price = 1000;
-        }
+        
     }
 }

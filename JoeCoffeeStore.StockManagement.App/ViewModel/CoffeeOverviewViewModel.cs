@@ -66,10 +66,12 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
 
         private void EditCoffee(object obj)
         {
-            System.Windows.MessageBox.Show("Something will happen!");
+            System.Windows.MessageBox.Show("This will open detail view");
         }
 
-        //checks if a coffee was selected in the list
+        
+        //if coffee was selected the button becomes enabled
+        //command can be executed
         private bool CanEditCoffee(object obj)
         {
             if (selectedCoffee != null)

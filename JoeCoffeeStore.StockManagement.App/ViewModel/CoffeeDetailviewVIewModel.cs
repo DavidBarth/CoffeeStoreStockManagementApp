@@ -1,4 +1,5 @@
-﻿using JoeCoffeeStore.StockManagement.App.Utility;
+﻿using JoeCoffeeStore.StockManagement.App.Services;
+using JoeCoffeeStore.StockManagement.App.Utility;
 using JoeCoffeeStore.StockManagement.Model;
 using System.ComponentModel;
 using System.Windows.Input;
@@ -14,7 +15,8 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
 
         private Coffee selectedCoffee;
 
-       
+        private CoffeeDataService dataService;
+
         private void RaisePropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -33,12 +35,13 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
             }
         }
 
-       public CoffeeDetailviewViewModel()
+        public void LoadCommands()
         {
             SaveCommand = new CustomCommand(SaveCoffee, CanSaveCoffee);
             DeleteCommand = new CustomCommand(DeleteCoffee, CanDeleteCoffee);
         }
 
+        //command
         private void SaveCoffee(object coffee)
         {
 
@@ -51,6 +54,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
             return false;
         }
 
+        //command
         private void DeleteCoffee(object coffee)
         {
 
