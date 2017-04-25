@@ -1,10 +1,12 @@
 ﻿using JoeCoffeeStore.StockManagement.App.Extensions;
+using JoeCoffeeStore.StockManagement.App.Messages;
 using JoeCoffeeStore.StockManagement.App.Services;
 using JoeCoffeeStore.StockManagement.App.Utility;
 using JoeCoffeeStore.StockManagement.Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
+using System;
 
 namespace JoeCoffeeStore.StockManagement.App.ViewModel
 {
@@ -57,6 +59,12 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
             coffeeDataService = new CoffeeDataService();
             LoadData();
             LoadCommands();
+            Messenger.Default.Register<UpdateListMessage>(this, OnUpDateListMessageReceived);
+        }
+
+        private void OnUpDateListMessageReceived(UpdateListMessage obj)
+        {
+            LoadData();
         }
 
         private void LoadCommands()

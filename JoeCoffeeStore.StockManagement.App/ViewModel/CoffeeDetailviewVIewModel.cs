@@ -1,4 +1,5 @@
-﻿using JoeCoffeeStore.StockManagement.App.Services;
+﻿using JoeCoffeeStore.StockManagement.App.Messages;
+using JoeCoffeeStore.StockManagement.App.Services;
 using JoeCoffeeStore.StockManagement.App.Utility;
 using JoeCoffeeStore.StockManagement.Model;
 using System.ComponentModel;
@@ -40,6 +41,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
             SaveCommand = new CustomCommand(SaveCoffee, CanSaveCoffee);
             DeleteCommand = new CustomCommand(DeleteCoffee, CanDeleteCoffee);
 
+
             Messenger.Default.Register<Coffee>(this, OnCoffeeReceived);
         }
 
@@ -51,7 +53,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         //command
         private void SaveCoffee(object coffee)
         {
-
+            Messenger.Default.Send(new UpdateListMessage());
         }
 
         private bool CanSaveCoffee(object coffee)
@@ -64,7 +66,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         //command
         private void DeleteCoffee(object coffee)
         {
-
+            Messenger.Default.Send(new UpdateListMessage());
         }
 
         private bool CanDeleteCoffee(object coffee)
