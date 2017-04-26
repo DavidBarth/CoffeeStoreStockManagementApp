@@ -129,7 +129,8 @@ namespace Tests.Mocks
 
         public Coffee GetCoffeeById(int id)
         {
-            throw new NotImplementedException();
+            Coffee aCoffee = coffees.Find(a => a.CoffeeId == id);
+            return aCoffee;
         }
 
         public List<Coffee> GetCoffees()

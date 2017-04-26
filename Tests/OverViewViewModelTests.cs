@@ -10,7 +10,7 @@ namespace Tests
     [TestClass]
     public class CoffeeOverviewViewModelTests
     {
-
+        //instances to store mock dependency
         private ICoffeeDataService coffeeDataService;
         private IDialogService dialogService;
 
@@ -30,7 +30,7 @@ namespace Tests
             var expectedCoffees = coffeeDataService.GetAllCoffees();
 
             //Act
-            var viewModel = new CoffeeOverviewViewModel(this.coffeeDataService,dialogService);
+            var viewModel = new CoffeeOverviewViewModel(this.coffeeDataService,this.dialogService);
             coffees = viewModel.Coffees;
 
             //Assert

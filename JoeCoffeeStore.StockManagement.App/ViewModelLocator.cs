@@ -17,11 +17,11 @@ namespace JoeCoffeeStore.StockManagement.App
         private static IDialogService dialogService = new DialogService();
         private static ICoffeeDataService coffeeDataService = new CoffeeDataService(new CoffeeRepository());
 
-        private static CoffeeOverviewViewModel coffeeOverviewViewModel = new CoffeeOverviewViewModel(coffeeDataService,dialogService);
+        private static CoffeeDetailviewViewModel coffeeOverviewViewModel = new CoffeeDetailviewViewModel(coffeeDataService,dialogService);
 
         private static CoffeeDetailviewViewModel coffeeDetailviewViewModel = new CoffeeDetailviewViewModel(coffeeDataService, dialogService);
          
-        public static CoffeeOverviewViewModel CoffeeOverviewViewModel
+        public static CoffeeDetailviewViewModel CoffeeOverviewViewModel
         {
             get { return coffeeOverviewViewModel; }
         }

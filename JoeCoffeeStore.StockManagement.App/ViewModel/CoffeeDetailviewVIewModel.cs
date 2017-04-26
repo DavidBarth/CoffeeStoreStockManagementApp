@@ -21,10 +21,11 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private Coffee selectedCoffee;
+        
         private ICoffeeDataService coffeeDataService;
         private IDialogService dialogService;
 
+        private Coffee selectedCoffee;
         public Coffee SelectedCoffee
         {
             get { return selectedCoffee; }
@@ -36,7 +37,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
             }
         }
 
-        
+        //Constructor
         public CoffeeDetailviewViewModel(ICoffeeDataService coffeeDataService, IDialogService dialogService)
         {
             this.coffeeDataService = coffeeDataService;

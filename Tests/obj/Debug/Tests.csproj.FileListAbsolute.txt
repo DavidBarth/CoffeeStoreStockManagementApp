@@ -1,6 +1,5 @@
 C:\DAVE\CoffeeStoreStockManagementApp\Tests\bin\Debug\Tests.dll
 C:\DAVE\CoffeeStoreStockManagementApp\Tests\bin\Debug\Tests.pdb
-C:\DAVE\CoffeeStoreStockManagementApp\Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\DAVE\CoffeeStoreStockManagementApp\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
 C:\DAVE\CoffeeStoreStockManagementApp\Tests\obj\Debug\Tests.dll
 C:\DAVE\CoffeeStoreStockManagementApp\Tests\obj\Debug\Tests.pdb
