@@ -134,7 +134,7 @@ namespace Tests.Mocks
 
         public List<Coffee> GetCoffees()
         {
-            throw new NotImplementedException();
+            return coffees;
         }
 
         public void UpdateCoffee(Coffee coffee)
