@@ -1,4 +1,5 @@
 ﻿using JoeCoffeeStore.StockManagement.App.Services;
+using JoeCoffeeStore.StockManagement.DAL;
 using JoeCoffeeStore.StockManagement.Model;
 using System.Collections.Generic;
 
@@ -6,7 +7,13 @@ namespace Tests.Mocks
 {
     class MockCoffeeDataService : ICoffeeDataService
     {
-        private MockRepository repository = new MockRepository();
+        private ICoffeeRepository repository;
+
+        public MockCoffeeDataService(ICoffeeRepository repository)
+        {
+            this.repository = repository;
+        }
+
 
         public void DeleteCoffee(Coffee coffee)
         {
