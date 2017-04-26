@@ -52,6 +52,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CoffeeDataServiceTest.cs" />
     <Compile Include="Mocks\MockCoffeeDataService.cs" />
     <Compile Include="Mocks\MockDialogService.cs" />
     <Compile Include="Mocks\MockRepository.cs" />
