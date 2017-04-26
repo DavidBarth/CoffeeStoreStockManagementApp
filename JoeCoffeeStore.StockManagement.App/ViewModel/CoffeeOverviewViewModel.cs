@@ -15,8 +15,8 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
 
         private ObservableCollection<Coffee> coffees;
 
-        private CoffeeDataService coffeeDataService;
-        private DialogService dialogueService;
+        private ICoffeeDataService coffeeDataService;
+        private IDialogService dialogueService;
 
         public ICommand EditCommand { get; set; }
 
@@ -51,12 +51,12 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
             }
         }
 
-
-        public CoffeeOverviewViewModel()
+        //using constructor injection 
+        public CoffeeOverviewViewModel(ICoffeeDataService coffeeDataService, IDialogService dialogService)
         {
             //create data service to pull in the list of coffees
-            coffeeDataService = new CoffeeDataService();
-            dialogueService = new DialogService();
+            this.coffeeDataService = coffeeDataService;
+            this.dialogueService = dialogService;
             LoadData();
             LoadCommands();
             Messenger.Default.Register<UpdateListMessage>(this, OnUpDateListMessageReceived);
@@ -65,7 +65,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         private void OnUpDateListMessageReceived(UpdateListMessage obj)
         {
             LoadData();
-            dialogueService.CloseDialog();
+            dialogueService.CloseDialog(); //here using the passed in instance to perfom work
         }
 
         private void LoadCommands()

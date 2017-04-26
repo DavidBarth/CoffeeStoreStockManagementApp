@@ -14,8 +14,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         public ICommand SaveCommand;
         public ICommand DeleteCommand;
 
-        private CoffeeDataService coffeeDataService;
-
+        
         private void RaisePropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -23,6 +22,9 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
         }
 
         private Coffee selectedCoffee;
+        private ICoffeeDataService coffeeDataService;
+        private IDialogService dialogService;
+
         public Coffee SelectedCoffee
         {
             get { return selectedCoffee; }
@@ -34,18 +36,17 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
             }
         }
 
-        public CoffeeDetailviewViewModel() 
+        
+        public CoffeeDetailviewViewModel(ICoffeeDataService coffeeDataService, IDialogService dialogService)
         {
-            coffeeDataService = new CoffeeDataService();
-
+            this.coffeeDataService = coffeeDataService;
+            this.dialogService = dialogService;
+            Messenger.Default.Register<Coffee>(this, OnCoffeeReceived);
             SaveCommand = new CustomCommand(SaveCoffee, CanSaveCoffee);
             DeleteCommand = new CustomCommand(DeleteCoffee, CanDeleteCoffee);
-
-
-            Messenger.Default.Register<Coffee>(this, OnCoffeeReceived);
         }
 
-        private void OnCoffeeReceived(Coffee coffee)
+        public void OnCoffeeReceived(Coffee coffee)
         {
             SelectedCoffee = coffee;   
         }
@@ -57,11 +58,9 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
             Messenger.Default.Send<UpdateListMessage>(new UpdateListMessage());
         }
 
-        private bool CanSaveCoffee(object coffee)
+        private bool CanSaveCoffee(object obj)
         {
-            if (selectedCoffee != null)
-                return true;
-            return false;
+            return true;
         }
 
         //command
@@ -73,9 +72,7 @@ namespace JoeCoffeeStore.StockManagement.App.ViewModel
 
         private bool CanDeleteCoffee(object coffee)
         {
-            if (selectedCoffee != null)
-                return true;
-            return false;
+            return true;
         }
     }
 }

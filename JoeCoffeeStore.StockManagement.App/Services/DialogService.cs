@@ -6,10 +6,14 @@ namespace JoeCoffeeStore.StockManagement.App.Services
     /// <summary>
     /// Service class to open and close detail view
     /// </summary>
-    public class DialogService
+    public class DialogService : IDialogService
     {
         Window coffeeDetailView = null;
 
+        public DialogService()
+        {
+
+        }
         public void ShowDialog()
         {
             coffeeDetailView = new CoffeeDetailView();

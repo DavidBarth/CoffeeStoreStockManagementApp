@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace JoeCoffeeStore.StockManagement.App.Services
 {
-    public interface ICoffeDataService
+    public interface ICoffeeDataService
     {
         void DeleteCoffee(Coffee coffee);
         List<Coffee> GetAllCoffees();

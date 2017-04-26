@@ -5,12 +5,15 @@ using System.Collections.Generic;
 namespace JoeCoffeeStore.StockManagement.App.Services
 {
     //business layer of service layer towards CoffeeRepository class 
-    public class CoffeeDataService: ICoffeDataService
+    public class CoffeeDataService: ICoffeeDataService
     {
         ICoffeeRepository repository = new CoffeeRepository();
-        public CoffeeDataService()
+
+
+        //parameter introduced to be able to plug in a mock repository
+        public CoffeeDataService(ICoffeeRepository repository)
         {
-            
+            this.repository = repository;
         }
 
         public Coffee GetCoffeeDetail(int coffeeId)

@@ -41,7 +41,7 @@
             <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SelectedCoffee.Price, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding SelectedCoffee.AmountInStock, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding SelectedCoffee.FirstAddedToStockDate, Mode=TwoWay}"></TextBox>
-            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding SelectedCoffee.ExtraDescription, Mode=TwoWay, FallbackValue='NA'}"></TextBox>
+           <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding SelectedCoffee.ExtraDescription, Mode=TwoWay, FallbackValue='NA'}"></TextBox>
 
            <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="2">
                 <Button Margin="5" Content="Save Coffee">
