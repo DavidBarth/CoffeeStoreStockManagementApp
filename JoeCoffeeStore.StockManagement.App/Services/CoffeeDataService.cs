@@ -7,7 +7,7 @@ namespace JoeCoffeeStore.StockManagement.App.Services
     //business layer of service layer towards CoffeeRepository class 
     public class CoffeeDataService: ICoffeeDataService
     {
-        ICoffeeRepository repository = new CoffeeRepository();
+        ICoffeeRepository repository;
 
 
         //parameter introduced to be able to plug in a mock repository
